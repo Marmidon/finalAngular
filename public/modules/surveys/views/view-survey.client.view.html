@@ -1,0 +1,40 @@
+<section data-ng-controller="SurveysController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="survey.name"></h1>
+	</div>
+	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == survey.user._id))">
+		<a class="btn btn-primary" href="/#!/surveys/{{survey._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<small>
+		<em class="text-muted">
+			Posted on
+			<span data-ng-bind="survey.created | date:'mediumDate'"></span>
+			by
+			<span data-ng-bind="survey.user.displayName"></span>
+		</em>
+	</small>
+     <form class="form-horizontal" data-ng-submit="respond(survey)" novalidate>
+            <fieldset>
+    <label data-ng-bind="survey.question1"></label>
+    <div class="form-group" >
+                    <label class="control-label" for="name">Question 1</label>
+                <div class="controls">
+                        <select id="selectq1" name="selectq1" ng-init="setFormScope(this)">
+                            <option data-ng-bind="survey.q1answer1" id="q1a1"></option>
+                            <option data-ng-bind="survey.q1answer2" id="q1a2"></option>
+                            <option data-ng-bind="survey.q1answer3" id="q1a3"></option>
+                            
+                        </select>
+                    </div>
+        <div class="form-group">
+                    <input ng-click="updateform()" type="submit" class="btn btn-default">
+                </div>
+                     </div>  
+                </fieldset>
+        </form>
+</section>
