@@ -40,6 +40,11 @@ var SurveySchema = new Schema({
 		required: 'Please fill Answer 3',
 		trim: true
 	},
+    q1count1: {
+		type: Number,
+		default: '',
+		trim: true
+	},
 	created: {
 		type: Date,
 		default: Date.now

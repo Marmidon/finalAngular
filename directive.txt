@@ -1,0 +1,17 @@
+'use strict';
+
+angular.module('surveys').directive('directive1', function() {
+    return {
+        restrict: 'A',
+        scope: {
+      showApp: '@',
+      directive1: '&'
+    },
+        link: function(scope, element) {
+            scope.noScriptFilter = function() {
+                var noScriptElements = angular.element('q1a1');
+                console.log (noScriptElements);
+            };
+        }
+   
+    }});

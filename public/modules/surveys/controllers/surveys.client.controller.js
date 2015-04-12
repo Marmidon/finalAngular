@@ -14,6 +14,7 @@ angular.module('surveys').controller('SurveysController', ['$scope', '$statePara
                 q1answer1: this.q1answer1,
                 q1answer2: this.q1answer2,
                 q1answer3: this.q1answer3,
+                q1count1: 0
 			});
 
 			// Redirect after save
@@ -64,21 +65,37 @@ angular.module('surveys').controller('SurveysController', ['$scope', '$statePara
 		$scope.find = function() {
 			$scope.surveys = Surveys.query();
 		};
-
+        
+        // Submit answer
         $scope.updateform = function () {
-            var alt = userService;
-        console.log(alt);
-             var target = document.getElementById('selectq1');
-    var target1 = document.getElementById('q1a1');
-    var target2 = document.getElementById('q1a2');
-    var target3 = document.getElementById('q1a3');
+               console.log($scope.selectedItem.index);
+            // Redirect after save
+			$scope.survey.$update(function() {
+				$location.path('surveys/' + $scope.survey._id);
+			}, function(errorResponse) {
+				$scope.error = errorResponse.data.message;
+			});
 };
+        // Prepare viewing surveys
+        $scope.setFormScope= function () {
+            $scope.survey.$promise.then(function() {
+                 $scope.items = [
+        {index: 1,name: $scope.survey.q1answer1 },
+        {index: 2,name: $scope.survey.q1answer2 },
+        {index: 3,name: $scope.survey.q1answer3 }
+    ];
+
+   });
+};
+
 
 		// Find existing Survey
 		$scope.findOne = function() {
 			$scope.survey = Surveys.get({ 
 				surveyId: $stateParams.surveyId
 			});
+           
+            //console.log($scope.survey);
 		};
 	}
 ]);
