@@ -42,17 +42,17 @@ var SurveySchema = new Schema({
 	},
     q1count1: {
 		type: Number,
-		default: '',
+		default: 0,
 		trim: true
 	},
     q1count2: {
 		type: Number,
-		default: '',
+		default: 0,
 		trim: true
 	},
     q1count3: {
 		type: Number,
-		default: '',
+		default: 0,
 		trim: true
 	},
 	created: {

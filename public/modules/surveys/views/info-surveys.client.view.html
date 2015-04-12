@@ -1,0 +1,29 @@
+<section data-ng-controller="SurveysController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="survey.name"></h1>
+	</div>
+     <form class="form-horizontal" data-ng-submit="respond(survey)" novalidate>
+            <fieldset>
+    
+    <div class="form-group" >
+        <div>
+            <h4 data-ng-bind="survey.question1"></h4>
+        </div>
+        <div>
+            <label data-ng-bind="survey.q1answer1"></label>
+            <p>Number of votes: <span data-ng-bind="survey.q1count1"></span></p>
+        </div>
+        <div>
+            <label data-ng-bind="survey.q1answer2"></label>
+            <p>Number of votes: <span data-ng-bind="survey.q1count2"></span></p>
+        </div>
+        <div>
+            <label data-ng-bind="survey.q1answer3"></label>
+            <p>Number of votes: <span data-ng-bind="survey.q1count3"></span></p>
+        </div> 
+                <div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+                </fieldset>
+        </form>
+</section>

@@ -17,6 +17,10 @@ angular.module('surveys').config(['$stateProvider',
 			url: '/surveys/:surveyId',
 			templateUrl: 'modules/surveys/views/view-survey.client.view.html'
 		}).
+        state('infoSurvey', {
+			url: '/surveys/:surveyId/info',
+			templateUrl: 'modules/surveys/views/info-surveys.client.view.html'
+		}).
 		state('editSurvey', {
 			url: '/surveys/:surveyId/edit',
 			templateUrl: 'modules/surveys/views/edit-survey.client.view.html'
