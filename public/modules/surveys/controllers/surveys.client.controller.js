@@ -27,11 +27,7 @@ angular.module('surveys').controller('SurveysController', ['$scope', '$statePara
 				$scope.error = errorResponse.data.message;
 			});
 		};
-        //answer to survey
-        $scope.answer = function(survey)
-        {
-            survey.count++;
-        };
+
 
 		// Remove existing Survey
 		$scope.remove = function(survey) {
@@ -68,12 +64,36 @@ angular.module('surveys').controller('SurveysController', ['$scope', '$statePara
         
         // Submit answer
         $scope.updateform = function () {
-               console.log($scope.selectedItem.index);
-            // Redirect after save
-			$scope.survey.$update(function() {
-				$location.path('surveys/' + $scope.survey._id);
+               
+            if (angular.isUndefined($scope.selectedItem))
+            {
+               $scope.survey.$provoke(function(response) {
+				$location.path('surveys/' + response._id);
+
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
+			});
+                
+            }
+            else {
+            if ($scope.selectedItem.index===1)
+            {
+                $scope.survey.q1count1++;
+            }
+            if ($scope.selectedItem.index===2)
+            {
+                $scope.survey.q1count2++;
+            }
+            if ($scope.selectedItem.index===3)
+            {
+                $scope.survey.q1count3++;
+            }
+            }
+            // Redirect after save
+			$scope.survey.$update(function() {
+				$location.path('surveys');
+			}, function(errorResponse) {
+				$scope.error = $scope.errorResponse.data.message;
 			});
 };
         // Prepare viewing surveys
@@ -84,7 +104,7 @@ angular.module('surveys').controller('SurveysController', ['$scope', '$statePara
         {index: 2,name: $scope.survey.q1answer2 },
         {index: 3,name: $scope.survey.q1answer3 }
     ];
-
+        
    });
 };
 
@@ -94,8 +114,11 @@ angular.module('surveys').controller('SurveysController', ['$scope', '$statePara
 			$scope.survey = Surveys.get({ 
 				surveyId: $stateParams.surveyId
 			});
-           
-            //console.log($scope.survey);
+            $scope.survey.$promise.then(function() {
+           $scope.selectedIndex = {index: 1,name: $scope.survey.q1answer1 };
+                //console.log($scope.selectedIndex);
+                 });
+            
 		};
 	}
 ]);

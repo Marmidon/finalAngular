@@ -45,6 +45,16 @@ var SurveySchema = new Schema({
 		default: '',
 		trim: true
 	},
+    q1count2: {
+		type: Number,
+		default: '',
+		trim: true
+	},
+    q1count3: {
+		type: Number,
+		default: '',
+		trim: true
+	},
 	created: {
 		type: Date,
 		default: Date.now

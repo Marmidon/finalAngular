@@ -51,7 +51,12 @@ exports.update = function(req, res) {
 		}
 	});
 };
-
+exports.provoke = function(req, res) {		
+			return res.status(400).send({
+				message: 'error'
+			});		
+	
+};
 /**
  * Delete an Survey
  */
