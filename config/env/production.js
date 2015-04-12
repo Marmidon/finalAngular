@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/finalangular',
+	db: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://admin:admin@ds045757.mongolab.com:45757/survey',
 	assets: {
 		lib: {
 			css: [

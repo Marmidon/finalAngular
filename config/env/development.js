@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/finalangular-dev',
+	db: 'mongodb://admin:admin@ds045757.mongolab.com:45757/survey',
 	app: {
 		title: 'finalAngular - Development Environment'
 	},
