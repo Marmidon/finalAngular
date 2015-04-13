@@ -64,16 +64,11 @@ angular.module('surveys').controller('SurveysController', ['$scope', '$statePara
         
         // Submit answer
         $scope.updateform = function () {
-               
+            $scope.isError=false;   
             if (angular.isUndefined($scope.selectedItem))
             {
-               $scope.survey.$provoke(function(response) {
-				$location.path('surveys/' + response._id);
-
-			}, function(errorResponse) {
-				$scope.error = errorResponse.data.message;
-			});
-                
+               $scope.isError=true;
+               $scope.errorMessage='Please select answer'; 
             }
             else {
             if ($scope.selectedItem.index===1)
@@ -89,12 +84,15 @@ angular.module('surveys').controller('SurveysController', ['$scope', '$statePara
                 $scope.survey.q1count3++;
             }
             }
+            if (!($scope.isError)) {
+            
             // Redirect after save
 			$scope.survey.$update(function() {
 				$location.path('surveys');
 			}, function(errorResponse) {
 				$scope.error = $scope.errorResponse.data.message;
 			});
+        }
 };
         // Prepare viewing surveys
         $scope.setFormScope= function () {
@@ -107,8 +105,12 @@ angular.module('surveys').controller('SurveysController', ['$scope', '$statePara
         
    });
 };
-
-
+        //Send info email
+        $scope.emailstats= function (){ 
+            var survey = $scope.survey;
+            survey.$sendemail();
+            
+        };
 		// Find existing Survey
 		$scope.findOne = function() {
 			$scope.survey = Surveys.get({ 

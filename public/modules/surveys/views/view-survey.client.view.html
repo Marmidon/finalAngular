@@ -12,6 +12,9 @@
 		<a class="btn btn-primary" data-ng-click="remove();">
 			<i class="glyphicon glyphicon-trash"></i>
 		</a>
+        <a class="btn btn-primary" data-ng-click="emailstats();">
+			<i class="glyphicon glyphicon-email"></i>
+		</a>
 	</div>
 	<small>
 		<em class="text-muted">
@@ -21,23 +24,26 @@
 			<span data-ng-bind="survey.user.displayName"></span>
 		</em>
 	</small>
-     <form class="form-horizontal" data-ng-submit="respond(survey)" novalidate>
-            <fieldset>
-    
-    <div class="form-group" >
+    <div id="questions">
+     <form class="form" data-ng-submit="respond(survey)" novalidate>
+            <fieldset>  
+                   <div class="form-group" >
                     <label data-ng-bind="survey.question1"></label>
-         <select  ng-model="selectedItem" data-ng-init="setFormScope()" ng-init="selectedItem= items[0]"  ng-options="item as item.name for item in items">                                                 
+                       <select  ng-model="selectedItem" data-ng-init="setFormScope()" ng-init="selectedItem= items[0]"  ng-options="item as         item.name for item in items">                                                 
                         </select>
                     </div>
-                <div class="controls">
-                       
-        <div class="form-group">
+                <div class="controls">                       
+                <div class="form-group">
                     <input ng-click="updateform()" type="submit" class="btn btn-default">
                 </div>
                      </div>  
                 <div data-ng-show="error" class="text-danger">
 					<strong data-ng-bind="error"></strong>
 				</div>
+                <div ng-show="isError" class="text-danger">
+					<strong data-ng-bind="errorMessage"></strong>
+				</div>
                 </fieldset>
         </form>
+    </div>
 </section>

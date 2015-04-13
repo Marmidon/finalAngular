@@ -7,7 +7,8 @@ angular.module('surveys').config(['$stateProvider',
 		$stateProvider.
 		state('listSurveys', {
 			url: '/surveys',
-			templateUrl: 'modules/surveys/views/list-surveys.client.view.html'
+			templateUrl: 'modules/surveys/views/list-surveys.client.view.html',
+              css: 'css/list-surveys.client.css'
 		}).
 		state('createSurvey', {
 			url: '/surveys/create',
@@ -15,7 +16,8 @@ angular.module('surveys').config(['$stateProvider',
 		}).
 		state('viewSurvey', {
 			url: '/surveys/:surveyId',
-			templateUrl: 'modules/surveys/views/view-survey.client.view.html'
+			templateUrl: 'modules/surveys/views/view-survey.client.view.html',
+            css: 'css/view-surveys.client.css'
 		}).
         state('infoSurvey', {
 			url: '/surveys/:surveyId/info',

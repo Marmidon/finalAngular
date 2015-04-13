@@ -11,8 +11,8 @@ module.exports = function(app) {
 
 	app.route('/surveys/:surveyId')
 		.get(surveys.read)
-		.put( surveys.update)
-		.delete(users.requiresLogin, surveys.hasAuthorization, surveys.delete);
+		.put(surveys.update)
+		.delete(users.requiresLogin, surveys.hasAuthorization, surveys.delete,surveys.emailstats);
     //users.requiresLogin,  surveys.hasAuthorization,
 	// Finish by binding the Survey middleware
 	app.param('surveyId', surveys.surveyByID);
