@@ -1,3 +1,5 @@
+<!--Name:Mykyta Stenko, Parin Patel-->
+<!--COMP308 – Emerging Technologies - Final Team Project-->
 <div class="container" data-ng-controller="HeaderController">
 	<div class="navbar-header">
 		<button class="navbar-toggle" type="button" data-ng-click="toggleCollapsibleMenu()">
@@ -6,7 +8,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a href="/#!/" class="navbar-brand">finalAngular</a>
+		<a href="/#!/" class="navbar-brand">Home</a>
 	</div>
 	<nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
 		<ul class="nav navbar-nav" data-ng-if="menu.shouldRender(authentication.user);">
@@ -28,6 +30,15 @@
 				<a href="/#!/surveys">Surveys</a>
 			</li>
         </ul>
+        
+        <ul class="nav navbar-nav navbar-center">
+            <li>
+               <a>
+                <img alt="mplogo" height="45" src="assets/images/mp.jpg" width="75" id="body" />
+                </a>
+            </li>
+        </ul>
+        
 		<ul class="nav navbar-nav navbar-right" data-ng-hide="authentication.user">
 			<li ui-route="/signup" ng-class="{active: $uiRoute}">
 				<a href="/#!/signup">Sign Up</a>
