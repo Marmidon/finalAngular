@@ -1,0 +1,23 @@
+<!--Name:Mykyta Stenko, Parin Patel-->
+<!--COMP308 – Emerging Technologies - Final Team Project-->
+   <section data-ng-controller="SurveysController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Surveys</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="survey in surveys" data-ng-show="((authentication.user) && (authentication.user._id == survey.user._id))" data-ng-href="#!/surveys/{{survey._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+                Survey <span id="boldtext" data-ng-bind="survey.name"></span>
+				Posted on
+				<span data-ng-bind="survey.created | date:'medium'"></span>
+				by
+				<b></b><span id="boldtext" data-ng-bind="survey.user.displayName"></span></b>.
+                Number of responses : {{survey.q1count1+survey.q1count2+survey.q1count3}}
+			</small>
+			
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!surveys.$resolved || surveys.length">
+    	No Surveys yet, why don't you <a href="/#!/surveys/create">create one</a>?
+    </div>
+</section>
