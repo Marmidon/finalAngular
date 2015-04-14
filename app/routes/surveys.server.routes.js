@@ -8,7 +8,7 @@ module.exports = function(app) {
 	app.route('/surveys')
 		.get(surveys.list)
 		.post(users.requiresLogin, surveys.create);
-    app.route('/mysurvey')
+    app.route('/mysurveys')
 		.get(surveys.list)
 		.post(users.requiresLogin, surveys.create);
 
