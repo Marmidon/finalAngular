@@ -8,6 +8,9 @@ module.exports = function(app) {
 	app.route('/surveys')
 		.get(surveys.list)
 		.post(users.requiresLogin, surveys.create);
+    app.route('/mysurvey')
+		.get(surveys.list)
+		.post(users.requiresLogin, surveys.create);
 
 	app.route('/surveys/:surveyId')
 		.get(surveys.read)
