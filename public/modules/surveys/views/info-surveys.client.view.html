@@ -17,15 +17,17 @@
         <div>
             <label data-ng-bind="survey.q1answer1"></label>
             <p>Number of responses: <span data-ng-bind="survey.q1count1"></span></p>
-            <p>{{survey.q1count1/(survey.q1count1+survey.q1count2+survey.q1count3)}}</p>
+            <p>Statistics: {{100*survey.q1count1/(survey.q1count1+survey.q1count2+survey.q1count3) | number:2}}%</p>
         </div>
         <div>
             <label data-ng-bind="survey.q1answer2"></label>
             <p>Number of responses: <span data-ng-bind="survey.q1count2"></span></p>
+            <p>Statistics: {{100*survey.q1count2/(survey.q1count1+survey.q1count2+survey.q1count3) | number:2}}%</p>
         </div>
         <div>
             <label data-ng-bind="survey.q1answer3"></label>
             <p>Number of responses: <span data-ng-bind="survey.q1count3"></span></p>
+            <p>Statistics: {{100*survey.q1count3/(survey.q1count1+survey.q1count2+survey.q1count3) | number:2}}%</p>
         </div> 
                 <div data-ng-show="error" class="text-danger">
 					<strong data-ng-bind="error"></strong>
