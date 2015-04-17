@@ -29,6 +29,7 @@
                 <div class="panel panel-default">
     <div class="panel-body">
                    <div class="form-group" >
+<<<<<<< HEAD
                     <label data-ng-bind="survey.question1"></label><br>
                        <select  ng-model="selectedItem1" data-ng-init="setFormScope()"  ng-options="item as item.name for item in items1">                                                 
                         </select>
@@ -40,6 +41,13 @@
                 <div class="form-group" >
                     <label data-ng-bind="survey.question2"></label><br>
                        <select  ng-model="selectedItem2" ng-options="item as item.name for item in items2">                                                 
+=======
+                    <label data-ng-bind="survey.question1"></label>
+                    <label data-ng-bind="survey.question2"></label>
+                    <label data-ng-bind="survey.question3"></label>
+                    <label data-ng-bind="survey.question4"></label>
+                       <select  ng-model="selectedItem" data-ng-init="setFormScope()" ng-init="selectedItem= items[0]"  ng-options="item as         item.name for item in items">                                                 
+>>>>>>> 87073ee0ffcb859f210fa96ac3f2eace195b67c0
                         </select>
                     </div>
                     </div>

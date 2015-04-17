@@ -1,3 +1,6 @@
+//Name:Mykyta Stenko, Parin Patel
+//COMP308 – Emerging Technologies - Final Team Project
+
 'use strict';
 
 (function() {
@@ -6,10 +9,11 @@
 		// Initialize global variables
 		var AuthenticationController,
 			scope,
-			$httpBackend,
-			$stateParams,
-			$location;
-
+            $stateParams,
+			$location,
+			$httpBackend;
+			
+        
 		beforeEach(function() {
 			jasmine.addMatchers({
 				toEqualData: function(util, customEqualityTesters) {

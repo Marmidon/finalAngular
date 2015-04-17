@@ -1,3 +1,5 @@
+<!--Name:Mykyta Stenko, Parin Patel-->
+<!--COMP308 – Emerging Technologies - Final Team Project-->
 @media (min-width: 992px) {
 	.nav-users {
 		position: fixed;
@@ -11,4 +13,7 @@
 	top: 10px;
 	right: 10px;
 	position: absolute;
+}
+.body {
+    background-color: #EDFFFD;
 }
