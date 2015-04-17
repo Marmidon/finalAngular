@@ -61,22 +61,7 @@ exports.provoke = function(req, res) {
 			});		
 	
 };
-// test, delete after
-module.exports.update1 = function(req, res) {
-	var survey = req.survey ;
-    console.log('Hello');
-	survey = _.extend(survey , req.body);
 
-	survey.save1(function(err) {
-		if (err) {
-			return res.status(400).send({
-				message: errorHandler.getErrorMessage(err)
-			});
-		} else {
-			res.jsonp(survey);
-		}
-	});
-};
 /**
  * Delete an Survey
  */

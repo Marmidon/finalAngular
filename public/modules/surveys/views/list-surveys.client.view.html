@@ -8,17 +8,6 @@
         <a data-ng-repeat="survey in surveys" data-ng-href="#!/surveys/{{survey._id}}" class="list-group-item">
 			<small class="list-group-item-text">
                 Survey <span id="boldtext" data-ng-bind="survey.name"></span>
-<<<<<<< HEAD
-=======
-				Posted on
-				<span data-ng-bind="survey.created | date:'medium'"></span>
-				by
-				<b></b><span id="boldtext" data-ng-bind="survey.user.displayName"></span></b>.
-                Number of responses : {{survey.q1count1+survey.q1count2+survey.q1count3}}
-                Number of responses : {{survey.q2count11+survey.q2count12+survey.q2count13}}
-                Number of responses : {{survey.q3count21+survey.q3count22+survey.q3count23}}
-                Number of responses : {{survey.q4count31+survey.q4count32+survey.q4count33}}
->>>>>>> 87073ee0ffcb859f210fa96ac3f2eace195b67c0
 			</small>
 			
         </a>

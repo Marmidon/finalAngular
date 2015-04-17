@@ -14,7 +14,7 @@ angular.module('surveys').controller('SurveysController', ['$scope', '$statePara
                 q1answer1: this.q1answer1,
                 q1answer2: this.q1answer2,
                 q1answer3: this.q1answer3,
-<<<<<<< HEAD
+
                 
                 question2: this.question2,
                 q2answer1: this.q2answer1,
@@ -31,24 +31,9 @@ angular.module('surveys').controller('SurveysController', ['$scope', '$statePara
                 q4answer2: this.q4answer2,
                 q4answer3: this.q4answer3,
                 
-=======
-                question2: this.question2,
-                q2answer11: this.q2answer11,
-                q2answer12: this.q2answer12,
-                q2answer13: this.q2answer13,
-                question3: this.question3,
-                q3answer21: this.q3answer21,
-                q3answer22: this.q3answer22,
-                q3answer23: this.q3answer23,
-                question4: this.question4,
-                q4answer31: this.q4answer31,
-                q4answer32: this.q4answer32,
-                q4answer33: this.q4answer33,
-                q1count1: 0,
-                q2count11: 0,
-                q3count21: 0,
-                q4count31: 0    
->>>>>>> 87073ee0ffcb859f210fa96ac3f2eace195b67c0
+
+ 
+
 			});
 
 			// Redirect after save
@@ -84,7 +69,7 @@ angular.module('surveys').controller('SurveysController', ['$scope', '$statePara
 		$scope.update = function() {
 			var survey = $scope.survey;
 
-			survey.$update(function() {
+			survey.$update(function(response) {
 				$location.path('surveys/' + survey._id);
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
@@ -142,23 +127,14 @@ angular.module('surveys').controller('SurveysController', ['$scope', '$statePara
             if ($scope.selectedItem1.index===1)
             {
                 $scope.survey.q1count1++;
-                $scope.survey.q2count11++;
-                $scope.survey.q3count21++;
-                $scope.survey.q4count31++;
             }
             if ($scope.selectedItem1.index===2)
             {
                 $scope.survey.q1count2++;
-                $scope.survey.q2count12++;
-                $scope.survey.q3count22++;
-                $scope.survey.q4count32++;
             }
             if ($scope.selectedItem1.index===3)
             {
                 $scope.survey.q1count3++;
-                $scope.survey.q2count13++;
-                $scope.survey.q3count23++;
-                $scope.survey.q4count33++;
             }
                 
                 if ($scope.selectedItem2.index===1)
@@ -206,6 +182,7 @@ angular.module('surveys').controller('SurveysController', ['$scope', '$statePara
         }
 };
         // Prepare viewing surveys
+        
         $scope.setFormScope= function () {
             $scope.survey.$promise.then(function() {
                  $scope.items1 = [
@@ -213,7 +190,7 @@ angular.module('surveys').controller('SurveysController', ['$scope', '$statePara
         {index: 2,name: $scope.survey.q1answer2 },
         {index: 3,name: $scope.survey.q1answer3 }
     ];
-<<<<<<< HEAD
+
                 $scope.items2 = [
         {index: 1,name: $scope.survey.q2answer1 },
         {index: 2,name: $scope.survey.q2answer2 },
@@ -228,26 +205,10 @@ angular.module('surveys').controller('SurveysController', ['$scope', '$statePara
         {index: 1,name: $scope.survey.q4answer1 },
         {index: 2,name: $scope.survey.q4answer2 },
         {index: 3,name: $scope.survey.q4answer3 }
-=======
-                 $scope.items = [
-        {index: 1,name: $scope.survey.q2answer11 },
-        {index: 2,name: $scope.survey.q2answer12 },
-        {index: 3,name: $scope.survey.q2answer13 }
-    ];
-                 $scope.items = [
-        {index: 1,name: $scope.survey.q3answer21 },
-        {index: 2,name: $scope.survey.q3answer22 },
-        {index: 3,name: $scope.survey.q3answer23 }
-    ];
-                 $scope.items = [
-        {index: 1,name: $scope.survey.q4answer31 },
-        {index: 2,name: $scope.survey.q4answer32 },
-        {index: 3,name: $scope.survey.q4answer33 }
->>>>>>> 87073ee0ffcb859f210fa96ac3f2eace195b67c0
-    ];
-        
-   });
-};
+                ];
+            })};
+
+                                        
         //Send info email
         $scope.emailstats= function (){ 
             var survey = $scope.survey;
@@ -263,16 +224,9 @@ angular.module('surveys').controller('SurveysController', ['$scope', '$statePara
 			$scope.survey = Surveys.get({ 
 				surveyId: $stateParams.surveyId
 			});
-<<<<<<< HEAD
-=======
-            $scope.survey.$promise.then(function() {
-           $scope.selectedIndex = {index: 1,name: $scope.survey.q1answer1 };
-           $scope.selectedIndex = {index: 1,name: $scope.survey.q2answer11 };
-           $scope.selectedIndex = {index: 1,name: $scope.survey.q3answer21 };
-           $scope.selectedIndex = {index: 1,name: $scope.survey.q4answer31 };
-                //console.log($scope.selectedIndex);
-                 });
->>>>>>> 87073ee0ffcb859f210fa96ac3f2eace195b67c0
+
+
+
             
 		};
 	}
