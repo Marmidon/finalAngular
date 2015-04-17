@@ -8,10 +8,6 @@
         <a data-ng-repeat="survey in surveys" data-ng-show="((authentication.user) && (authentication.user._id == survey.user._id))" data-ng-href="#!/surveys/{{survey._id}}" class="list-group-item">
 			<small class="list-group-item-text">
                 Survey <span id="boldtext" data-ng-bind="survey.name"></span>
-				Posted on
-				<span data-ng-bind="survey.created | date:'medium'"></span>
-				by
-				<b></b><span id="boldtext" data-ng-bind="survey.user.displayName"></span></b>.
                 Number of responses : {{survey.q1count1+survey.q1count2+survey.q1count3}}
 			</small>
 			

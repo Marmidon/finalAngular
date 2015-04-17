@@ -62,12 +62,12 @@ exports.provoke = function(req, res) {
 	
 };
 // test, delete after
-exports.update1 = function(req, res) {
+module.exports.update1 = function(req, res) {
 	var survey = req.survey ;
     console.log('Hello');
 	survey = _.extend(survey , req.body);
 
-	survey.save(function(err) {
+	survey.save1(function(err) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
@@ -77,34 +77,12 @@ exports.update1 = function(req, res) {
 		}
 	});
 };
-exports.provoke = function(req, res) {		
-			return res.status(400).send({
-				message: 'error'
-			});		
-	
-};
 /**
  * Delete an Survey
  */
 exports.delete = function(req, res) {
 	var survey = req.survey ;
-survey.sendemail(function(err) {
-                var smtpTransport = nodemailer.createTransport(config.mailer.options);
-			var mailOptions = {
-				to: 'nstenko1991@gmail.com',
-				from: config.mailer.from,
-				subject: 'Password Reset',
-				html: 'Hello'
-			};
-			smtpTransport.sendMail(mailOptions, function(error, info){
-    if(error){
-        console.log(error);
-    }else{
-        console.log('Message sent: ' + info.response);
-    }
-	});
-    res.jsonp(survey);
-            });
+
 	survey.remove(function(err) {
 		if (err) {
 			return res.status(400).send({

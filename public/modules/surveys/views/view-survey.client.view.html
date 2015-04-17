@@ -14,9 +14,6 @@
 		<a class="btn btn-primary" data-ng-click="remove();">
 			<i class="glyphicon glyphicon-trash"></i>
 		</a>
-        <a class="btn btn-primary" data-ng-click="emailstats();">
-			<i class="glyphicon glyphicon-email"></i>
-		</a>
 	</div>
 	<small>
 		<em class="text-muted">
@@ -29,11 +26,42 @@
     <div id="questions">
      <form class="form" data-ng-submit="respond(survey)" novalidate>
             <fieldset>  
+                <div class="panel panel-default">
+    <div class="panel-body">
                    <div class="form-group" >
-                    <label data-ng-bind="survey.question1"></label>
-                       <select  ng-model="selectedItem" data-ng-init="setFormScope()" ng-init="selectedItem= items[0]"  ng-options="item as         item.name for item in items">                                                 
+                    <label data-ng-bind="survey.question1"></label><br>
+                       <select  ng-model="selectedItem1" data-ng-init="setFormScope()"  ng-options="item as item.name for item in items1">                                                 
                         </select>
                     </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+    <div class="panel-body">
+                <div class="form-group" >
+                    <label data-ng-bind="survey.question2"></label><br>
+                       <select  ng-model="selectedItem2" ng-options="item as item.name for item in items2">                                                 
+                        </select>
+                    </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+    <div class="panel-body">
+                <div class="form-group" >
+                    <label data-ng-bind="survey.question3"></label><br>
+                       <select  ng-model="selectedItem3"ng-options="item as item.name for item in items3">                                                 
+                        </select>
+                    </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+    <div class="panel-body">
+                <div class="form-group" >
+                    <label data-ng-bind="survey.question4"></label> <br>
+                       <select  ng-model="selectedItem4"ng-options="item as item.name for item in items4">                                                 
+                        </select>
+                    </div>
+                    </div>
+                </div>
                 <div class="controls">                       
                 <div class="form-group">
                     <input ng-click="updateform()" type="submit" class="btn btn-default">

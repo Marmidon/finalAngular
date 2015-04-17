@@ -18,11 +18,12 @@
 					<b class="caret"></b>
 				</a>
 				<ul ng-switch-when="dropdown" class="dropdown-menu">
+                    <li ng-show="authentication.user" ui-route="/mysurveys" ng-class="{active: $uiRoute}">
+				<a href="/#!/mysurveys">My Surveys</a>
 					<li data-ng-repeat="subitem in item.items | orderBy: 'position'" data-ng-if="subitem.shouldRender(authentication.user);" ui-route="{{subitem.uiRoute}}" ng-class="{active: $uiRoute}">
 						<a href="/#!/{{subitem.link}}" data-ng-bind="subitem.title"></a>
 					</li>
-                    <li ng-show="authentication.user" ui-route="/mysurveys" ng-class="{active: $uiRoute}">
-				<a href="/#!/mysurveys">My Surveys</a>
+                    
 			</li>
 				</ul>
 				<a ng-switch-default href="/#!/{{item.link}}" data-ng-bind="item.title"></a>

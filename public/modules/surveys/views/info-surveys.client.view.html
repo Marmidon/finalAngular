@@ -10,7 +10,10 @@
                 
     
     <div class="form-group" >
-        
+        <!--Question 1-->
+        <div class="panel panel-default">
+    <div class="panel-body">
+
         <div>
             <h4 data-ng-bind="survey.question1"></h4>
         </div>
@@ -29,6 +32,77 @@
             <p>Number of responses: <span data-ng-bind="survey.q1count3"></span></p>
             <p>Statistics: {{100*survey.q1count3/(survey.q1count1+survey.q1count2+survey.q1count3) | number:2}}%</p>
         </div> 
+        </div>
+            </div>
+        <!--Question 2-->
+        <div class="panel panel-default">
+    <div class="panel-body">
+        <div>
+            <h4 data-ng-bind="survey.question2"></h4>
+        </div>
+        <div>
+            <label data-ng-bind="survey.q2answer1"></label>
+            <p>Number of responses: <span data-ng-bind="survey.q2count1"></span></p>
+            <p>Statistics: {{100*survey.q2count1/(survey.q2count1+survey.q2count2+survey.q2count3) | number:2}}%</p>
+        </div>
+        <div>
+            <label data-ng-bind="survey.q2answer2"></label>
+            <p>Number of responses: <span data-ng-bind="survey.q2count2"></span></p>
+            <p>Statistics: {{100*survey.q2count2/(survey.q2count1+survey.q2count2+survey.q2count3) | number:2}}%</p>
+        </div>
+        <div>
+            <label data-ng-bind="survey.q2answer3"></label>
+            <p>Number of responses: <span data-ng-bind="survey.q2count3"></span></p>
+            <p>Statistics: {{100*survey.q2count3/(survey.q2count1+survey.q2count2+survey.q2count3) | number:2}}%</p>
+        </div> 
+        </div>
+            </div>
+         <!--Question 3-->
+        <div class="panel panel-default">
+    <div class="panel-body">
+        <div>
+            <h4 data-ng-bind="survey.question3"></h4>
+        </div>
+        <div>
+            <label data-ng-bind="survey.q3answer1"></label>
+            <p>Number of responses: <span data-ng-bind="survey.q3count1"></span></p>
+            <p>Statistics: {{100*survey.q3count1/(survey.q3count1+survey.q3count2+survey.q3count3) | number:2}}%</p>
+        </div>
+        <div>
+            <label data-ng-bind="survey.q3answer2"></label>
+            <p>Number of responses: <span data-ng-bind="survey.q3count2"></span></p>
+            <p>Statistics: {{100*survey.q3count2/(survey.q3count1+survey.q3count2+survey.q3count3) | number:2}}%</p>
+        </div>
+        <div>
+            <label data-ng-bind="survey.q3answer3"></label>
+            <p>Number of responses: <span data-ng-bind="survey.q3count3"></span></p>
+            <p>Statistics: {{100*survey.q3count3/(survey.q3count1+survey.q3count2+survey.q3count3) | number:2}}%</p>
+        </div> 
+        </div>
+            </div>
+         <!--Question 4-->
+        <div class="panel panel-default">
+    <div class="panel-body">
+        <div>
+            <h4 data-ng-bind="survey.question4"></h4>
+        </div>
+        <div>
+            <label data-ng-bind="survey.q4answer1"></label>
+            <p>Number of responses: <span data-ng-bind="survey.q4count1"></span></p>
+            <p>Statistics: {{100*survey.q4count1/(survey.q4count1+survey.q4count2+survey.q4count3) | number:2}}%</p>
+        </div>
+        <div>
+            <label data-ng-bind="survey.q4answer2"></label>
+            <p>Number of responses: <span data-ng-bind="survey.q4count2"></span></p>
+            <p>Statistics: {{100*survey.q4count2/(survey.q4count1+survey.q4count2+survey.q4count3) | number:2}}%</p>
+        </div>
+        <div>
+            <label data-ng-bind="survey.q4answer3"></label>
+            <p>Number of responses: <span data-ng-bind="survey.q4count3"></span></p>
+            <p>Statistics: {{100*survey.q4count3/(survey.q4count1+survey.q4count2+survey.q4count3) | number:2}}%</p>
+        </div> 
+        </div>
+            </div>
                 <div data-ng-show="error" class="text-danger">
 					<strong data-ng-bind="error"></strong>
 				</div>
