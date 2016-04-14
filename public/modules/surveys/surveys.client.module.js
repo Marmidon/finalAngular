@@ -1,4 +1,4 @@
-//Name:Mykyta Stenko, Parin Patel
+//Name:Mykyta Stenko
 //COMP308 – Emerging Technologies - Final Team Project
 
 'use strict';
